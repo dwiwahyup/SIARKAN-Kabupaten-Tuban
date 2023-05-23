@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="{{ url('assets/dashboard/vendor/daterangepicker/daterangepicker.css')}}">
 
     <!-- Vector Map css -->
-    <link rel="stylesheet"
-        href="{{ url('assets/dashboard/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}">
+    <link rel="stylesheet" href="{{ url('assets/dashboard/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}">
 
     <!-- Theme Config Js -->
     <script src="{{ url('assets/dashboard/js/hyper-config.js')}}"></script>
@@ -28,18 +27,12 @@
     <link href="{{ url('assets/dashboard/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Datatables css -->
-    <link href="{{url('assets/dashboard/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{url('assets/dashboard/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{url('assets/dashboard/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{url('assets/dashboard/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{url('assets/dashboard/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{url('assets/dashboard/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css')}}"
-        rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/dashboard/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="show">
@@ -65,9 +58,9 @@
             <div class="content">
                 <!-- Start Content-->
                 <div class="container-fluid">
-                    
+
                     @yield('content')
-                
+
                 </div>
                 <!-- container -->
             </div>
@@ -112,8 +105,7 @@
     <!-- Vector Map js -->
     <script src="{{ url('assets/dashboard/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}">
     </script>
-    <script
-        src="{{ url('assets/dashboard/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js')}}">
+    <script src="{{ url('assets/dashboard/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js')}}">
     </script>
 
     <!-- Dashboard App js -->
@@ -145,6 +137,14 @@
     <!-- Datatable Demo Aapp js -->
     <script src="{{url('assets/dashboard/js/pages/demo.datatable-init.js')}}"></script>
 
+
+    <!-- Apex Chart js -->
+    <script src="{{url('assets/dashboard/vendor/apexcharts/apexcharts.min.js')}} "></script>
+
+    <!-- Apex Chart line Demo js -->
+    <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
+    <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+    <script src="{{url('assets/dashboard/js/pages/demo.apex-line.js')}}"></script>
 
 
 </body>

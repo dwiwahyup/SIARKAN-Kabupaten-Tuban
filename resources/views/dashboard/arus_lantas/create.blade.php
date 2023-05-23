@@ -34,17 +34,17 @@
             <div class="tab-content">
                 <div class="tab-pane show active" id="input-types-preview">
                     <div class="row">
-                        <form action="{{route('aruslantas.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('jalan.aruslantas.store', $jalan->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
+
+
                             <h4 class="header-title">Lokasi Penngamatan</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Nama Jalan</label>
-                                    <select class="form-select" name="jalans_id" required> 
+                                    <select class="form-select" name="nama_jalan" required>
                                         <option>Pilih Jalan</option>
-                                        @foreach ($data as $jalan)
-                                        <option value="{{$jalan->id}}">{{$jalan->nama_jalan}}</option>
-                                        @endforeach
+                                        <option>{{$jalan->nama_jalan}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -112,13 +112,12 @@
         lang: 'en',
         theme: 'dark'
     });
-    timepicker.on('change', function (evt) {
+    timepicker.on('change', function(evt) {
 
         var value = (evt.hour || '00') + ':' + (evt.minute || '00');
         evt.element.value = value;
 
     });
-
 </script>
 <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
 <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet" />

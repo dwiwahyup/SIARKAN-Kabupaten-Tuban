@@ -4,12 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-    <meta name="keywords"
-        content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+    <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+    <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
     <meta name="author" content="elemis">
-    <title>Sandbox - Modern & Multipurpose Bootstrap 5 Template</title>
+    <title>SIARKAN (Sitem Informasi Pemetaan Daerah Rawan Kecelakaan)</title>
     <link rel="shortcut icon" href="{{url('assets/img/favicon.png')}}">
     <link rel="stylesheet" href="{{url('assets/users/css/plugins.css')}}">
     <link rel="stylesheet" href="{{url('assets/users/css/style.css')}}">
@@ -26,7 +24,7 @@
     <!-- /.content-wrapper -->
     <!-- footer -->
     @yield('content')
-    
+
     @include('users.layouts.footer')
 
     <div class="progress-wrap">

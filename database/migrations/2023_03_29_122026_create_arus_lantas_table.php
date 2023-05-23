@@ -16,7 +16,6 @@ class CreateArusLantasTable extends Migration
         Schema::create('arus_lantas', function (Blueprint $table) {
             $table->id();
             $table->string('slug', 70);
-            $table->bigInteger('jalan_id');
             $table->string('nama_jalan');
             $table->time('jam_mulai');
             $table->time('jam_selesai');

@@ -5,15 +5,16 @@
 <section class="wrapper bg-light">
     <div class="container pt-10 pt-md-14 pb-14 pb-md-16 text-center">
         <div class="row gx-lg-8 gx-xl-12 gy-10 gy-xl-0 mb-14 align-items-center">
-            <div class="col-lg-7 order-lg-2">
+            <div class="col-lg-6 order-lg-2">
                 <!-- <figure><img class="img-auto" src="{{url('assets/users/img/illustrations/i21.png')}}" srcset="{{url('assets/users/img/illustrations/i21@2x.png 2x')}}" alt="" /></figure> -->
                 <!-- <figure><img class="img-auto" style="width: 500px;" src="https://res.cloudinary.com/diptxmzhz/image/upload/v1681586624/Rawan%20Kecelakaan/Car_crash-amico_dwn7oi.svg" alt="" /></figure> -->
                 <figure><img class="img-auto" style="width: 500px;" src="https://res.cloudinary.com/diptxmzhz/image/upload/v1681588178/Rawan%20Kecelakaan/35043_pqgm7h.jpg" alt="" /></figure>
             </div>
             <!-- /column -->
-            <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
-                <h1 class="display-1 fs-54 mb-5 mx-md-n5 mx-lg-0 mt-7" style="text-align: justify;">
-                    Sayangi nyawa! <br style="text-align: justify;"> Berkendaralah dengan <span class="rotator-fade text-primary"> Bijak, Aman, Tertib</span> <br class="d-md-none"></h1>
+            <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 text-center text-lg-start">
+                <h1 class="display-1 fs-54 mb-5 mx-md-n5 mx-lg-0 mt-7">
+                    Sayangi nyawa anda! <br> Berkendaralah dengan <br class="d-md-none"></h1>
+                <h1 class="fs-54 mx-lg-0" style="margin-top: -20px;"><span class="rotator-fade text-primary" style="text-align: justify;"> Bijak, Aman, Tertib</span></h1>
                 <!-- <h1 class="display-1 fs-54 mb-5 mx-md-n5 mx-lg-0 mt-7">Sayangi nyawa! <br class="d-md-none">Berkendaralah dengan bijak <br class="d-md-none"><span class="rotator-fade text-primary">mobile design,web design,3D animation</span></h1> -->
                 <p class="lead fs-lg mb-7" style="text-align: justify;">Website ini berisi himbauan tentang tata cara berkendara kendarang dengan baik. Serta menyediakan fitur pemetaan daerah rawan kecelakaan di Kabupaten Tuban.</p>
                 <span><a class="btn btn-lg btn-primary rounded-pill me-2">Cek Pemetaan</a></span>
@@ -196,20 +197,21 @@
 <section class="wrapper bg-light">
     <div class="container pt-6 pb-14 pb-md-16">
         <div class="row gx-lg-8 gx-xl-12 gy-10">
-            <div class="col-lg-6 mb-0">
+            <div class="col-lg-6 mb-0" style="align-self:center;">
                 <h2 class="fs-16 text-uppercase text-primary mb-4">FAQ</h2>
-                <h3 class="display-3 mb-4">If you don't see an answer to your question, you can send us an email
-                    from our contact form.</h3>
-                <p class="mb-6">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
-                    odio sem nec elit. Nullam quis risus eget urna mollis ornare.</p>
-                <a href="#" class="btn btn-primary rounded-pill">All FAQ</a>
+                <h3 class="display-3 mb-4">Frequently Asked Questions</h3>
+                <p class="mb-6">FAQ section pada sistem informasi ini menyediakan informasi penting dan jawaban atas pertanyaan umum seputar sistem informasi ini. Anda bisa menemukukan infromasi mengenai website SIARKAN (Sistem Informasi Pemetaan Daerah Rawan Kecelakaan) Kabupaten Tuban</p>
             </div>
             <!--/column -->
             <div class="col-lg-6">
                 <div id="accordion-3" class="accordion-wrapper">
                     <div class="card accordion-item shadow-lg">
                         <div class="card-header" id="accordion-heading-3-1">
-                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-1" aria-expanded="false" aria-controls="accordion-collapse-3-1">Apa itu SIARKAN?</button>
+                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-1" aria-expanded="false" aria-controls="accordion-collapse-3-1">Apa itu
+                                <strong>
+                                    <span class="text-primary">SIARKAN Kabupaten Tuban?</span>
+                                </strong>
+                            </button>
                         </div>
                         <!-- /.card-header -->
                         <div id="accordion-collapse-3-1" class="collapse" aria-labelledby="accordion-heading-3-1" data-bs-target="#accordion-3">
@@ -239,17 +241,12 @@
                     <!-- /.card -->
                     <div class="card accordion-item shadow-lg">
                         <div class="card-header" id="accordion-heading-3-3">
-                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-3" aria-expanded="false" aria-controls="accordion-collapse-3-3">Do you offer a free trial
-                                edit?</button>
+                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-3" aria-expanded="false" aria-controls="accordion-collapse-3-3">Sumber data yang digunakan pada penelitian ini?</button>
                         </div>
                         <!-- /.card-header -->
                         <div id="accordion-collapse-3-3" class="collapse" aria-labelledby="accordion-heading-3-3" data-bs-target="#accordion-3">
                             <div class="card-body">
-                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                    fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet
-                                    fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                                    et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                    ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.
+                                <p>Data yang di gunakan pada penelitian ini bersumber dari Polres Tuban (data kecelakaan) dan dari Dinas Perhubungan Kabupaten Tuban (data jalan).
                                 </p>
                             </div>
                             <!-- /.card-body -->
@@ -259,17 +256,12 @@
                     <!-- /.card -->
                     <div class="card accordion-item shadow-lg">
                         <div class="card-header" id="accordion-heading-3-4">
-                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-4" aria-expanded="false" aria-controls="accordion-collapse-3-4">How do I reset my Account
-                                password?</button>
+                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3-4" aria-expanded="false" aria-controls="accordion-collapse-3-4">Bagaimana jika ingin mengetahui hasil pemetaan?</button>
                         </div>
                         <!-- /.card-header -->
                         <div id="accordion-collapse-3-4" class="collapse" aria-labelledby="accordion-heading-3-4" data-bs-target="#accordion-3">
                             <div class="card-body">
-                                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                    fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet
-                                    fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                                    et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                    ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.
+                                <p>Untuk mengetahui hasil pemetaan, anda bisa klik pada menu "Pemetaan" dan anda akan di arahkan ke halaman pemetaan.Anda juga bisa menggunakan Tombol ini <a href="" type="sumbit">Pemetaan</a>
                                 </p>
                             </div>
                             <!-- /.card-body -->
@@ -293,7 +285,11 @@
         </div>
     </div> -->
     <!-- /.overflow-hidden -->
+    <div style="margin-top: 20px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253467.04740821905!2d111.73122006617668!3d-6.9593713900865515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e779e5bae8278bf%3A0x3027a76e352be70!2sTuban%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1681634917230!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
+</div>
 <!-- /section -->
+
 
 @endsection

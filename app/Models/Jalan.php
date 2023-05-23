@@ -24,6 +24,6 @@ class Jalan extends Model
 
     public function arusLantas()
     {
-        return $this->hasMany(ArusLantas::class, 'id_jalan', 'id');
+        return $this->hasMany(ArusLantas::class, 'jalans_id', 'id');
     }
 }

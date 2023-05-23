@@ -10,22 +10,28 @@ use Illuminate\Support\Facades\DB;
 
 class ArusLantasController extends Controller
 {
-    public function index()
+    public function index($slug)
     {
+        $jalan = Jalan::where('slug', $slug)->first();
+        // dd($jalan);
 
-        $data = ArusLantas::all();
+        $data = ArusLantas::with('jalan')->where('id', $jalan->id)->get();
+        // dd($data);
         return view('dashboard.arus_lantas.index', ['data' => $data]);
     }
 
-    public function create()
+    public function create($slug)
     {
-        $jalan = Jalan::all();
-        return view('dashboard.arus_lantas.create', ['data' => $jalan]);
+        $jalan = Jalan::with('arusLantas')->where('slug', $slug)->first();
+        // return $jalan;
+        // $jalan = Jalan::all();
+
+        return view('dashboard.arus_lantas.create', ['jalan' => $jalan]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Jalan $jalan)
     {
-        // dd($request);
+        // dd($jalan);
         $this->validate($request, [
             // 'nama_jalan'=> 'required',
             'jam_mulai' => 'required',
@@ -37,17 +43,18 @@ class ArusLantasController extends Controller
             'total_2_arah' => 'required',
         ]);
 
-        $nama_jalan = Jalan::where('id', $request->jalans_id)->first()->nama_jalan;
+        // $nama_jalan = Jalan::where('id', $request->jalans_id)->first()->nama_jalan;
 
         $data = $request->all();
-        $data['nama_jalan'] = $nama_jalan;
-        $data['slug'] = SlugService::createSlug(Jalan::class, 'slug', $nama_jalan,);
+        $data['nama_jalan'] = $jalan->nama_jalan;
+        $data['jalans_id'] = $jalan->id;
+        $data['slug'] = SlugService::createSlug(Jalan::class, 'slug', $jalan->nama_jalan,);
         ArusLantas::create($data);
 
-        // dd ($data);
+        // dd($data);
         if ($data) {
             return redirect()
-                ->route('aruslantas.index')
+                ->route('jalan.aruslantas.index', ['jalan' => $jalan->slug])
                 ->with([
                     'success' => 'Data Jalan Berhasil Ditambahkan'
                 ]);
@@ -61,15 +68,21 @@ class ArusLantasController extends Controller
         }
     }
 
-    public function edit($slug)
+    public function edit($jalan, $aruslanta)
     {
-        $data = DB::table('arus_lantas')->where('slug', $slug)->first();
-        $jalan = Jalan::all();
+        // dd($aruslanta);
+        $jalan = Jalan::where('slug', $jalan)->first();
+        $aruslanta = ArusLantas::where('slug', $aruslanta)->first();
 
-        return view('dashboard.arus_lantas.edit', ['data' => $data], ['dataa' => $jalan]);
+        // $data = DB::table('arus_lantas')->where('slug', $slug)->first();
+        // $jalan = Jalan::all();
+
+        return view('dashboard.arus_lantas.edit', ['jalan' => $jalan, 'aruslantas' => $aruslanta]);
+
+        // return view('dashboard.arus_lantas.edit', ['data' => $data], ['dataa' => $jalan]);
     }
 
-    public function update(Request $request, ArusLantas $aruslanta)
+    public function update(Request $request, Jalan $jalan, ArusLantas $aruslanta)
     {
         // dd($aruslanta);
         $this->validate($request, [
@@ -85,13 +98,12 @@ class ArusLantasController extends Controller
 
 
         $data = $request->all();
-        $data['slug'] = SlugService::createSlug(ArusLantas::class, 'slug', $request->nama_jalan);
         $aruslanta->update($data);
 
         // dd ($request);
         if ($data) {
             return redirect()
-                ->route('aruslantas.index')
+                ->route('jalan.aruslantas.index', ['jalan' => $jalan->slug])
                 ->with([
                     'success' => 'Data Berhasil Di Update'
                 ]);
@@ -105,12 +117,13 @@ class ArusLantasController extends Controller
         }
     }
 
-    public function destroy(ArusLantas $aruslanta)
+    public function destroy(Jalan $jalan, ArusLantas $aruslanta)
     {
+        // dd($aruslanta);
         $aruslanta->delete();
         if ($aruslanta) {
             return redirect()
-                ->route('aruslantas.index')
+                ->back()
                 ->with([
                     'success' => 'Data Berhasil Dihapus'
                 ]);

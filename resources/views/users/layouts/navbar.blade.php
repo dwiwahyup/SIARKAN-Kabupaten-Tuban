@@ -14,13 +14,16 @@
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#" data-bs-toggle="dropdown">Beranda</a>
+                            <a class="nav-link" href="{{url('/')}}">Beranda</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#" data-bs-toggle="dropdown">Klasifikasi</a>
+                            <a class="nav-link" href="{{'/datakecelakaan'}}">Data Kecelakaan</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#" data-bs-toggle="dropdown">Author</a>
+                            <a class="nav-link" href="{{'/pemetaan'}}">Pemetaan</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{'/author'}}">Author</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>

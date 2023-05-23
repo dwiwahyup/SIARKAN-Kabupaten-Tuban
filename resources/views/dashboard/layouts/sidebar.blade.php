@@ -40,23 +40,29 @@
             <li class="side-nav-title">Navigation</li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                <a href="{{'/dashboard'}}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
                     <span> Dashboards </span>
                 </a>
 
 
             <li class="side-nav-item">
-                <a href="{{'/jalan'}}" class="side-nav-link">
+                <a href="{{'/dashboard/jalan'}}" class="side-nav-link">
                     <i class="uil-traffic-barrier"></i>
                     <span> Data Jalan </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{'/kecelakaan'}}" class="side-nav-link">
+                <a href="{{'/dashboard/kecelakaan'}}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span> Data Kecelakaan </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{'/dashboard/daerahrawan'}}" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Cek Kerawanan</span>
                 </a>
             </li>
             <!-- <li class="side-nav-item">

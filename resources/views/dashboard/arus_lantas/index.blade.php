@@ -52,15 +52,14 @@
                                 @foreach ($data as $data)
                                 <tr>
                                     <td>{{$data->nama_jalan}}</td>
-                                    <td>{{$data->jam_selesai}} - {{$data->jam_selesai}}</td>
+                                    <td>{{$data->jam_mulai}} - {{$data->jam_selesai}}</td>
                                     <td>{{$data->total_arah_1}} ({{$data->arah_1}})</td>
-                                    <td>{{$data->total_arah_2}} ({{$data->arah_1}}) </td>
+                                    <td>{{$data->total_arah_2}} ({{$data->arah_2}}) </td>
                                     <td>{{$data->total_2_arah}}</td>
                                     <td>
-                                        <a href="{{route('aruslantas.edit', $data->slug)}}"
-                                            class="btn btn-success btn-md ml-1">Edit</a>
-                                        <form action="{{route('aruslantas.destroy', $data->id)}}" class="d-inline"
-                                            method="POST">
+
+                                        <a href="{{route('jalan.aruslantas.edit', ['jalan' => $data->jalan->slug, 'aruslanta' => $data->slug])}}" class="btn btn-success btn-md ml-1">Edit</a>
+                                        <form action="{{route('jalan.aruslantas.destroy', ['jalan' => $data->jalan->id, 'aruslanta' => $data->id])}}" class="d-inline" method="POST">
                                             {{ csrf_field() }}
                                             {{method_field('delete')}}
                                             <button class="btn btn-danger ml-1">Delete</button>

@@ -7,9 +7,9 @@
             <div class="page-title-left">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Data Jalan</li>
+                    <li class="breadcrumb-item active">Data Kecalakaan</li>
                 </ol>
-                <h4 class="Header-title">Data Jalan</h4>
+                <h4 class="Header-title">Data Kecalakaan</h4>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="">
-                    <p><a href="jalan/create" class="btn btn-secondary"> Tambah Data Jalan</a></p>
+                    <p><a href="kecelakaan/create" class="btn btn-secondary"> Tambah Data Kecalakaan</a></p>
                 </div>
                 @if (session('success'))
                 <div class="alert alert-success">
@@ -40,35 +40,42 @@
                         <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
-                                    <th>Nama Jalan</th>
-                                    <th>Panjang Jalan</th>
-                                    <th>Status Jalan</th>
-                                    <th style="text-align: center;">Action</th>
+                                    <th>Waktu Kejadian</th>
+                                    <th>
+                                        <center> Lokasi TKP</center>
+                                    </th>
+                                    <th>Kendaraan Terlibat</th>
+                                    <th>
+                                        <center> Korban <br> MD</center>
+                                    </th>
+                                    <th>
+                                        <center> Korban <br> LB</center>
+                                    </th>
+                                    <th>
+                                        <center> Korban <br> LR</center>
+                                    </th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $data)
-                                <tr>
-                                    <td>{{$data->nama_jalan}}</td>
-                                    <td>{{$data->panjang_jalan}}</td>
-                                    <td>{{$data->status_jalan}}</td>
-                                    <td style="text-align: center;">
-                                        <a href="{{route('jalan.edit', $data->slug)}}" class="btn btn-success btn-md ml-1">Edit</a>
-                                        <form action="{{route('jalan.destroy', $data->id)}}" class="d-inline" method="POST">
-                                            {{ csrf_field() }}
-                                            {{method_field('delete')}}
-                                            <button class="btn btn-danger ml-1">Delete</button>
-                                        </form>
-                                        <a href="{{route('jalan.aruslantas.index', $data->slug)}}" class="btn btn-info">Arus</a>
-                                    </td>
-                                </tr>
-                                @endforeach
+
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Nama Jalan</th>
-                                    <th>Panjang Jalan</th>
-                                    <th>Status Jalan</th>
+                                    <th>Waktu Kejadian</th>
+                                    <th>
+                                        <center> Lokasi TKP</center>
+                                    </th>
+                                    <th>Kendaraan Terlibat</th>
+                                    <th>
+                                        <center> Korban <br> MD</center>
+                                    </th>
+                                    <th>
+                                        <center> Korban <br> LB</center>
+                                    </th>
+                                    <th>
+                                        <center> Korban <br> LR</center>
+                                    </th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>

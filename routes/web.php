@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArusLantasController;
+use App\Http\Controllers\DaerahRawanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JalanController;
@@ -24,6 +25,20 @@ Auth::routes();
 Route::get('/', function () {
     return view('users.home');
 });
+
+Route::get('/author', function () {
+    return view('users.author');
+});
+
+Route::get('/datakecelakaan', function () {
+    return view('users.data_kecelakaan');
+});
+
+Route::get('/pemetaan', function () {
+    return view('users.pemetaan.index');
+});
+
+
 // Route::get('/', function () {
 //         return view('dashboard');
 //     })->middleware('auth');
@@ -31,12 +46,13 @@ Route::get('/', function () {
 // route::get('/', [HomeController::class,'index']);
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::middleware(['Admin'])->group(function () {
-        route::get('dashboard', [DashboardController::class, 'index']);
+        route::get('/', [DashboardController::class, 'index']);
         Route::resource('jalan', JalanController::class);
         Route::resource('kecelakaan', KecelakaanController::class);
-        Route::resource('aruslantas', ArusLantasController::class);
+        Route::resource('jalan.aruslantas', ArusLantasController::class);
+        Route::resource('daerahrawan', DaerahRawanController::class);
     });
 });
 

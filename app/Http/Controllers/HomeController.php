@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('users.home');
     }
+
+    public function author()
+    {
+        return view('users.author');
+    }
+
+    public function datakecelakaan()
+    {
+        return view('users.data_kecelakaan');
+    }
 }

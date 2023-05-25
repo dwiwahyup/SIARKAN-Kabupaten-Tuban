@@ -16727,7 +16727,7 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 
 .modal-full-width {
-    width: 95%;
+    width: 75%;
     max-width: none;
 }
 

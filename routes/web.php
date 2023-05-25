@@ -53,6 +53,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
         Route::resource('kecelakaan', KecelakaanController::class);
         Route::resource('jalan.aruslantas', ArusLantasController::class);
         Route::resource('daerahrawan', DaerahRawanController::class);
+        Route::get('/details', [DaerahRawanController::class, 'detail'])->name('daerahrawan.detail');
     });
 });
 

@@ -8,6 +8,11 @@ class DaerahRawanController extends Controller
 {
     public function index()
     {
-        return view('users.daerah_rawan');
+        return view('dashboard.daerah_rawan.index');
+    }
+
+    public function detail()
+    {
+        return view('dashboard.daerah_rawan.detail');
     }
 }

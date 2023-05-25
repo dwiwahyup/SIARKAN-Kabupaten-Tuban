@@ -7092,7 +7092,8 @@ fieldset:disabled .btn {
     --bs-modal-box-shadow: 0rem 0rem 1.25rem rgba(30, 34, 40, 0.04);
   }
   .modal-dialog {
-    max-width: var(--bs-modal-width);
+    /* max-width: var(--bs-modal-width); */
+    width: 75%;
     margin-right: auto;
     margin-left: auto;
   }

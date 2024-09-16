@@ -11,7 +11,7 @@ class Jalan extends Model
     use HasFactory, Sluggable;
 
     protected $fillable = [
-        'slug', 'nama_jalan', 'panjang_jalan', 'status_jalan'
+        'slug', 'nama_jalan', 'status_jalan'
     ];
     public function sluggable(): array
     {
@@ -25,5 +25,10 @@ class Jalan extends Model
     public function arusLantas()
     {
         return $this->hasMany(ArusLantas::class, 'jalans_id', 'id');
+    }
+
+    public function kecelakaan()
+    {
+        return $this->hasMany(Kecelakaan::class, 'jalans_id', 'id');
     }
 }

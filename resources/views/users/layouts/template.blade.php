@@ -10,14 +10,12 @@
         content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
     <meta name="author" content="elemis">
     <title>SIARKAN (Sitem Informasi Pemetaan Daerah Rawan Kecelakaan)</title>
-    <link rel="shortcut icon" href="{{ url('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/diptxmzhz/image/upload/v1685521185/Rawan%20Kecelakaan/image-removebg-preview_2_wwoot2.png">
     <link rel="stylesheet" href="{{ url('assets/users/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ url('assets/users/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/users/css/colors/sky.css') }}">
     <link rel="preload" href="{{ url('assets/users/css/fonts/urbanist.css') }}" as="style"
         onload="this.rel='stylesheet'">
-
-
 
 
     <!-- Datatables css -->
@@ -35,16 +33,22 @@
     <link href="{{ url('assets/dashboard/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css') }}"
         rel="stylesheet" type="text/css" />
 
+    <!-- Leafleat -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 
 <body>
     <div class="content-wrapper">
-        <!-- header -->
         @include('users/layouts.navbar')
-
     </div>
-    <!-- /.content-wrapper -->
-    <!-- footer -->
+
     @yield('content')
 
     @include('users.layouts.footer')
@@ -56,27 +60,8 @@
     </div>
     <script src="{{ url('assets/users/js/plugins.js') }}"></script>
     <script src="{{ url('assets/users/js/theme.js') }}"></script>
-
-
-
-
-    <!-- Datatables js -->
-    <script src="{{ url('assets/dashboard/vendor/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}">
-    </script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ url('assets/dashboard/vendor/datatables.net-select/js/dataTables.select.min.js') }}"></script>
+    
+    @stack('js')
 
 
 </body>

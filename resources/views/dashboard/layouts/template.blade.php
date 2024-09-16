@@ -9,7 +9,7 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ url('assets/dashboard/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/diptxmzhz/image/upload/v1685521185/Rawan%20Kecelakaan/image-removebg-preview_2_wwoot2.png">
     {{-- {{ url('')}} --}}
     <!-- Daterangepicker css -->
     <link rel="stylesheet" href="{{ url('assets/dashboard/vendor/daterangepicker/daterangepicker.css')}}">
@@ -33,6 +33,11 @@
     <link href="{{url('assets/dashboard/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{url('assets/dashboard/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{url('assets/dashboard/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body class="show">
@@ -69,17 +74,10 @@
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <script>
                                 document.write(new Date().getFullYear())
                             </script> © Hyper - Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -146,7 +144,7 @@
     <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
     <script src="{{url('assets/dashboard/js/pages/demo.apex-line.js')}}"></script>
 
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </body>
 
 </html>

@@ -3,21 +3,25 @@
 
     <!-- Brand Logo Light -->
     <a href="index.html" class="logo logo-light">
-        <span class="logo-lg">
-            <img src="{{ url('assets/dashboard/images/logo.png')}}" alt="logo">
+        <span class="">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"
+                height="30" width="150" alt="logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ url('assets/dashboard/images/logo-sm.png')}}" alt="small logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"
+                alt="small logo">
         </span>
     </a>
 
     <!-- Brand Logo Dark -->
     <a href="index.html" class="logo logo-dark">
         <span class="logo-lg">
-            <img src="{{ url('assets/dashboard/images/logo-dark.png')}}" alt="dark logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"
+                alt="dark logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ url('assets/dashboard/images/logo-dark-sm.png')}}" alt="small logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"
+                alt="small logo">
         </span>
     </a>
 
@@ -40,40 +44,46 @@
             <li class="side-nav-title">Navigation</li>
 
             <li class="side-nav-item">
-                <a href="{{'/dashboard'}}" class="side-nav-link">
+                <a href="{{ '/dashboard' }}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
                     <span> Dashboards </span>
                 </a>
-
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ '/dashboard/user' }}" class="side-nav-link">
+                    <i class=" uil-user"></i>
+                    <span> User </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
-                <a href="{{'/dashboard/jalan'}}" class="side-nav-link">
+                <a href="{{ '/dashboard/jalan' }}" class="side-nav-link">
                     <i class="uil-traffic-barrier"></i>
                     <span> Data Jalan </span>
                 </a>
             </li>
+            {{-- <li class="side-nav-item">
+                <a href="{{ route('jalan.kecelakaan.index', ['jalan' => $jalanId]) }}" class="side-nav-link">
+                    <i class="uil-ambulance"></i>
+                    <span> Data Kecelakaan </span>
+                </a>
+
+            </li> --}}
 
             <li class="side-nav-item">
-                <a href="{{'/dashboard/kecelakaan'}}" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
-                    <span> Data Kecelakaan </span>
+                <a href="{{ '/dashboard/rules' }}" class="side-nav-link">
+                    <i class="uil-clipboard-notes"></i>
+                    <span> Rules</span>
                 </a>
             </li>
             <li class="side-nav-item">
-                <a href="{{'/dashboard/daerahrawan'}}" class="side-nav-link">
+                <a href="{{ '/dashboard/daerahrawan' }}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span> Cek Kerawanan</span>
                 </a>
             </li>
-            <!-- <li class="side-nav-item">
-                <a href="{{'/aruslantas'}}" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
-                    <span> Data Arus Lalu Lintas </span>
-                </a>
-            </li> -->
 
         </ul>
-        <!--- End Sidemenu -->
 
         <div class="clearfix"></div>
     </div>

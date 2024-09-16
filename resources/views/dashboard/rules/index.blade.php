@@ -7,10 +7,9 @@
             <div class="page-title-left">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Data Kecalakaan</li>
+                    <li class="breadcrumb-item active">Data Rules</li>
                 </ol>
-                <h4 class="Header-title">Data Kecalakaan</h4>
-
+                <h4 class="Header-title">Data Ruless</h4>
             </div>
         </div>
     </div>
@@ -20,13 +19,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <p><a href="kecelakaan/create" class="btn btn-secondary"> Tambah Data Kecalakaan</a></p>
-                    </div>
-                    <div class="col-lg-7">
-                        <h3 class="text-info">{{$nama_jalan->nama_jalan}}</h3>
-                    </div>
+                <div class="">
+                    <p><a href="rules/create" class="btn btn-secondary"> Tambah Rules</a></p>
                 </div>
                 @if (session('success'))
                 <div class="alert alert-success">
@@ -46,28 +40,35 @@
                         <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100 text-center">
                             <thead>
                                 <tr>
-                                    <th>Jalan</th>
-                                    <th>Tanggal</th>
-                                    <th>Jam</th>
+                                    <th>No</th>
+                                    <th>Jam Kecelakaan</th>
+                                    <th>Kondisi Jalan</th>
+                                    <th>Kondisi Lingkungan</th>
+                                    <th>Kondisi Kecelakaan</th>
+                                    <th>Tingkat Kerawanan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $data)
+                                @foreach ($rules as $rule)
                                 <tr>
-                                    <td>{{$data->nama_jalan}}</td>
-                                    <td>{{$data->tanggal}}</td>
-                                    <td>{{$data->jam}}</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $rule->jam }}</td>
+                                    <td>{{ $rule->kondisi_jalan }}</td>
+                                    <td>{{ $rule->kondisi_lingkungan }}</td>
+                                    <td>{{ $rule->kondisi_kecelakaan }}</td>
+                                    <td style="color:
+                                            @if ($rule->tingkat_kerawanan == 'Sangat Rawan') red
+                                            @elseif ($rule->tingkat_kerawanan == 'Rawan') orange
+                                            @else green @endif">
+                                        {{ $rule->tingkat_kerawanan }}
+                                    </td>
 
                                     <td>
-
-                                        <a href="{{route('jalan.kecelakaan.edit', ['jalan' => $data->jalan->slug, 'kecelakaan' => $data->slug])}}" class="btn btn-success btn-md ml-1">Edit</a>
-
-                                        <button type="button" value="{{$data->id}}" class="btn btn-info showbtn" data-bs-toggle="modal" data-bs-target="#detail-data">Detail </button>
+                                        <a href="{{ route('rules.edit', $rule->id) }}" class="btn btn-success btn-md ml-1">Edit</a>
 
                                         <button type="button" class="btn btn-danger ml-1" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">Delete
                                         </button>
-
                                         <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
@@ -82,12 +83,11 @@
                                                                     Data akan terhapus dari database
                                                                 </p>
                                                             </div>
-                                                            <form action="{{ route('jalan.kecelakaan.destroy', ['jalan' => $data->jalan->id, 'kecelakaan' => $data->id]) }}" class="d-inline" method="POST">
+                                                            <form action="{{ route('rules.destroy', $rule->id) }}" class="d-inline" method="POST">
                                                                 {{ csrf_field() }}
                                                                 {{ method_field('delete') }}
-                                                                <button id="deleteButton" class="btn btn-danger ml-1">Delete</button>
+                                                                <button class="btn btn-danger ml-1">Delete</button>
                                                             </form>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,58 +99,20 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Jalan</th>
-                                    <th>Tanggal</th>
-                                    <th>Jam</th>
+                                <th>No</th>
+                                    <th>Jam Kecelakaan</th>
+                                    <th>Kondisi Jalan</th>
+                                    <th>Kondisi Lingkungan</th>
+                                    <th>Kondisi Kecelakaan</th>
+                                    <th>Tingkat Kerawanan</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div> <!-- end preview-->
+                </div> <!-- end tab-content-->
+            </div> <!-- end card body-->
+        </div> <!-- end card -->
+    </div><!-- end col-->
 </div>
-
-
-@include('dashboard.kecelakaan.detail')
-
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script>
-        jQuery(document).ready(function() {
-            jQuery(document).on('click', '.showbtn', function() {
-                var kecelakaan = jQuery(this).val();
-                var jalan = {{$nama_jalan->id}};
-                console.log(jalan);
-                $.ajax({
-                    type: "GET",
-                    url: '/dashboard/jalan/' + jalan + '/kecelakaan/' + kecelakaan,
-                    success: function(response) {
-                        // console.log(response.detail.tanggal);
-                        $('input[name="tanggal"]').val(response.detail.tanggal);
-                        $('input[name="jam"]').val(response.detail.jam);
-                        $('input[name="nama_jalan"]').val(response.detail.nama_jalan);
-                        $('input[name="km"]').val(response.detail.km);
-                        $('input[name="tkp_dusun"]').val(response.detail.tkp_dusun);
-                        $('input[name="desa"]').val(response.detail.desa);
-                        $('input[name="kecamatan"]').val(response.detail.kecamatan);
-                        $('input[name="kabupaten"]').val(response.detail.kabupaten);
-                        $('input[name="latitude"]').val(response.detail.latitude);
-                        $('input[name="longitude"]').val(response.detail.longitude);
-                        $('input[name="kendaraan"]').val(response.detail.kendaraan);
-                        $('input[name="korban_md"]').val(response.detail.korban_md);
-                        $('input[name="korban_lb"]').val(response.detail.korban_lb);
-                        $('input[name="korban_lr"]').val(response.detail.korban_lr);
-                    }
-                })
-            })
-        })
-    </script>
-
-
-@push('js')
-@endpush
-
-
 @endsection

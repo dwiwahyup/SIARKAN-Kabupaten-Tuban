@@ -7,9 +7,9 @@
                 <div class="page-title-left">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Jalan</li>
+                        <li class="breadcrumb-item active">Data User</li>
                     </ol>
-                    <h4 class="Header-title">Data Jalan</h4>
+                    <h4 class="Header-title">Data User</h4>
                 </div>
             </div>
         </div>
@@ -19,9 +19,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="">
+                    <!-- <div class="">
                         <p><a href="jalan/create" class="btn btn-secondary"> Tambah Data Jalan</a></p>
-                    </div>
+                    </div> -->
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -41,8 +41,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Jalan</th>
-                                        <th>Status Jalan</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
                                 </thead>
@@ -50,15 +51,18 @@
                                     @foreach ($data as $data)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $data->nama_jalan }}</td>
-                                            <td>{{ $data->status_jalan }}</td>
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->email }}</td>
+                                            <td>{{ $data->role}}</td>
                                             <td style="text-align: center;">
-                                                <a href="{{ route('jalan.edit', $data->slug) }}"
+                                            <a href="{{ route('user.edit', $data->id) }}"
                                                     class="btn btn-success btn-md ml-1">Edit</a>
 
                                                 <button type="button" class="btn btn-danger ml-1" data-bs-toggle="modal"
                                                     data-bs-target="#warning-alert-modal">Delete
                                                 </button>
+
+
 
                                                 <div id="warning-alert-modal" class="modal fade" tabindex="-1"
                                                     role="dialog" aria-hidden="true">
@@ -75,7 +79,7 @@
                                                                             Data akan terhapus dari database
                                                                         </p>
                                                                     </div>
-                                                                    <form action="{{ route('jalan.destroy', $data->id) }}"
+                                                                    <form action="{{ route('user.destroy', $data->id) }}"
                                                                         class="d-inline" method="POST">
                                                                         {{ csrf_field() }}
                                                                         {{ method_field('delete') }}
@@ -87,28 +91,24 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <a href="{{ route('jalan.aruslantas.index', $data->slug) }}"
-                                                    class="btn btn-info">Arus</a> -->
-                                                <a href="{{route('jalan.kecelakaan.index', $data->slug) }}" class="btn btn-info">
-                                                    Kecelakaan
-                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                    <tr class="">
                                         <th>No</th>
-                                        <th>Nama Jalan</th>
-                                        <th>Status Jalan</th>
-                                        <th>Action</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th style="text-align: center;">Action</th>
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div> <!-- end preview-->
-                    </div> <!-- end tab-content-->
-                </div> <!-- end card body-->
-            </div> <!-- end card -->
-        </div><!-- end col-->
-    </div> <!-- end row-->
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
 @endsection

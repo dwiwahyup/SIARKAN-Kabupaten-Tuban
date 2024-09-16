@@ -7,9 +7,9 @@
             <div class="page-title-left">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Data Jalan</li>
+                    <li class="breadcrumb-item active">Data User</li>
                 </ol>
-                <h4 class="Header-title">Tambah Data Jalan</h4>
+                <h4 class="Header-title">Edit Data User</h4>
             </div>
         </div>
     </div>
@@ -35,22 +35,31 @@
                 <div class="tab-content">
                     <div class="tab-pane show active" id="input-types-preview">
                         <div class="row">
-                            <form action="{{route('jalan.update', $data->id)}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('user.update', $data->id)}}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
-                                <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <label for="simpleinput" class="form-label">Nama Jalan</label>
-                                        <input type="text" id="simpleinput" class="form-control" name="nama_jalan" value="{{old('nama_jalan') ?? $data->nama_jalan}}">
+                                <div class="row g-2">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="simpleinput" class="form-label">Nama User</label>
+                                            <input type="text" id="simpleinput" class="form-control" name="name" value="{{old('name') ?? $data->name}}">
+                                        </div>
                                     </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="simpleinput" class="form-label">Email</label>
+                                            <input type="text" id="simpleinput" class="form-control" name="name" value="{{old('email') ?? $data->email}}">
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label for="example-select" class="form-label">Status Jalan</label>
-                                        <select class="form-select" id="example-select" name="status_jalan">
-                                            <option>{{old('status_jalan') ?? $data->status_jalan}}</option>
-                                            <option value="Luar Kota">Luar Kota</option>
-                                            <option valus="Dalam Kota">Dalam Kota</option>
+                                        <label for="example-select" class="form-label">Role</label>
+                                        <select class="form-select" id="example-select" name="role">
+                                            <option>{{old('role') ?? $data->role}}</option>
+                                            <option value="User">USER</option>
+                                            <option value="ADMIN">ADMIN</option>
                                         </select>
                                     </div>
                                 </div>

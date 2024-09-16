@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJalansTable extends Migration
+class CreateRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateJalansTable extends Migration
      */
     public function up()
     {
-        Schema::create('jalans', function (Blueprint $table) {
+        Schema::create('rules', function (Blueprint $table) {
             $table->id();
-            $table->string('slug', 70)->unique();
-            $table->string('nama_jalan');
-            $table->string('status_jalan');
+            $table->string('jam');
+            $table->string('kondisi_jalan');
+            $table->string('kondisi_lingkungan');
+            $table->string('kondisi_kecelakaan');
+            $table->string('tingkat_kerawanan');
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +31,6 @@ class CreateJalansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jalans');
+        Schema::dropIfExists('rules');
     }
 }
